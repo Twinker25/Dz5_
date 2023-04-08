@@ -55,8 +55,50 @@
                         }
                         break;
                     case 2:
+                        Store store1 = new Store();
+                        Store store2 = new Store();
+                        store1.Input();
+                        Console.WriteLine();
+                        store2.Input();
+                        Console.WriteLine("\nShow info:");
+                        store1.Show();
+                        Console.WriteLine();
+                        store2.Show();
+                        Console.WriteLine();
+                        store1 += 1000.25;
+                        store2 += 694.51;
+                        Console.Write("\nSquare of store 1: ");
+                        store1.ShowSquare();
+                        Console.Write("\nSquare of store 2: ");
+                        store2.ShowSquare();
+
+                        if (store1 == store2)
+                        {
+                            Console.WriteLine("\nStores have equal square.");
+                        }
+
+                        if (store1 > store2)
+                        {
+                            Console.WriteLine("\nStore 1 has higher square than Store 2.");
+                        }
+
+                        else if (store1 < store2)
+                        {
+                            Console.WriteLine("\nStore 2 has higher square than Store 1.");
+                        }
+
+                        if (store1 != store2)
+                        {
+                            Console.WriteLine("\nStores have different square.");
+                        }
+
+                        if (store1.Equals(store2))
+                        {
+                            Console.WriteLine("\nStores are the equal.");
+                        }
                         break;
                     case 3:
+
                         break;
                     default:
                         Console.WriteLine("Error! Try again!");
