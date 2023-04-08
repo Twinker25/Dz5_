@@ -7,7 +7,7 @@
             int choice;
             do
             {
-                Console.Write("Enter number of task (1 - 4): ");
+                Console.Write("Enter number of task (1 - 3): ");
                 choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
@@ -98,7 +98,58 @@
                         }
                         break;
                     case 3:
+                        BookList bookList = new BookList();
+                        do
+                        {
+                            Console.WriteLine("Menu:\n1 - Add book\n2 - Remove book\n3 - Check book in list\n4 - Show the number of book in list\n5 - Show a list of book\n0 - Exit");
+                            Console.Write("Your choice: ");
+                            choice = int.Parse(Console.ReadLine());
 
+                            switch (choice)
+                            {
+                                case 1:
+                                    Console.Write("\nEnter name of book: ");
+                                    string add = Console.ReadLine();
+                                    bookList.Add(add);
+                                    Console.WriteLine("Book '" + add + "' add to list.");
+                                    break;
+                                case 2:
+                                    Console.Write("\nEnter name of book: ");
+                                    string remove = Console.ReadLine();
+                                    bookList.Remove(remove);
+                                    Console.WriteLine("Book '" + remove + "' remove from list.");
+                                    break;
+                                case 3:
+                                    Console.Write("\nEnter name of book: ");
+                                    string find = Console.ReadLine();
+                                    if (bookList.Contains(find))
+                                    {
+                                        Console.WriteLine("Book '" + find + "' available in list.");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Book '" + find + "' doesn`t exist in list.");
+                                    }
+                                    break;
+                                case 4:
+                                    Console.WriteLine("\nNumber of book in list: " + bookList.Count);
+                                    break;
+                                case 5:
+                                    Console.WriteLine("\nList of book:");
+                                    for (int i = 0; i < bookList.Count; i++)
+                                    {
+                                        Console.WriteLine((i + 1) + " - " + bookList[i]);
+                                    }
+                                    break;
+                                case 0:
+                                    Console.WriteLine("\nExit!");
+                                    break;
+                                default:
+                                    Console.WriteLine("\nError! Please try again!");
+                                    break;
+                            }
+                            Console.WriteLine(); 
+                        } while (choice != 0);
                         break;
                     default:
                         Console.WriteLine("Error! Try again!");
